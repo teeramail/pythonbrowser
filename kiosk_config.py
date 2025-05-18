@@ -4,11 +4,11 @@ Edit this file to customize your kiosk browser settings
 """
 
 # Target website to load
-DEFAULT_URL = "https://example.com"  # Change this to your target website
+DEFAULT_URL = "https://teachersco.vercel.app/about"  # Change this to your target website
 
 # Auto print settings
-AUTO_PRINT_INTERVAL = 3600000  # Auto print every hour (in milliseconds), set to 0 to disable
-AUTO_PRINT_ENABLED = True
+AUTO_PRINT_INTERVAL = 0  # Set to 0 to disable auto-printing
+AUTO_PRINT_ENABLED = True  # Only print once when page loads
 
 # Browser settings
 ENABLE_AUTOPLAY = True

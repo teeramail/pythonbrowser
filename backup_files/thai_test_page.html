@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Thai Printer Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 58mm;
+            margin: 0;
+            padding: 0;
+        }
+        .receipt {
+            width: 100%;
+            max-width: 58mm;
+        }
+        .header {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .content {
+            margin-bottom: 10px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.8em;
+            border-top: 1px dashed #000;
+            padding-top: 5px;
+        }
+        @media print {
+            @page {
+                size: 58mm 50mm;
+                margin: 0;
+            }
+            body {
+                width: 58mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <div class="header">
+            ทดสอบเครื่องพิมพ์ใบเสร็จ
+        </div>
+        <div class="content">
+            <p>รายการ: สินค้าทดสอบ</p>
+            <p>ราคา: ฿100.00</p>
+            <p>จำนวน: 1</p>
+            <p>รวม: ฿100.00</p>
+        </div>
+        <div class="footer">
+            ขอบคุณที่ใช้บริการ
+        </div>
+    </div>
+</body>
+</html>

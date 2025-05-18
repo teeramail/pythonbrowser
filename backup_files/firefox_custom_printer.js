@@ -1,0 +1,21 @@
+// Custom Firefox printer settings for 58mm thermal printer
+pref("print.printer_ThermalPrinter.paper_size", "custom_58x50mm");
+pref("print.printer_ThermalPrinter.paper_width", "58.0");
+pref("print.printer_ThermalPrinter.paper_height", "50.0");
+pref("print.printer_ThermalPrinter.paper_unit", "mm");
+pref("print.printer_ThermalPrinter.paper_name", "Custom 58x50mm");
+pref("print.printer_ThermalPrinter.print_margin_top", "0.0");
+pref("print.printer_ThermalPrinter.print_margin_bottom", "0.0");
+pref("print.printer_ThermalPrinter.print_margin_left", "0.0");
+pref("print.printer_ThermalPrinter.print_margin_right", "0.0");
+pref("print.printer_ThermalPrinter.print_scaling", "1.0");
+pref("print.printer_ThermalPrinter.print_shrink_to_fit", false);
+pref("print.printer_ThermalPrinter.print_to_file", false);
+pref("print.printer_ThermalPrinter.print_bg_colors", true);
+pref("print.printer_ThermalPrinter.print_bg_images", true);
+pref("print.printer_ThermalPrinter.print_header_left", "");
+pref("print.printer_ThermalPrinter.print_header_center", "");
+pref("print.printer_ThermalPrinter.print_header_right", "");
+pref("print.printer_ThermalPrinter.print_footer_left", "");
+pref("print.printer_ThermalPrinter.print_footer_center", "");
+pref("print.printer_ThermalPrinter.print_footer_right", "");

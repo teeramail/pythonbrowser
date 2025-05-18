@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Receipt Printer Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #receipt {
+            text-align: left;
+            white-space: pre;
+            font-family: monospace;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Receipt Printer Test</h1>
+        <p>This page tests the thermal receipt printer integration with the kiosk browser.</p>
+        
+        <div id="receipt">SAMPLE RECEIPT
+-----------------------
+Item 1............$10.00
+Item 2............$15.00
+Item 3............$20.00
+-----------------------
+Total.............$45.00
+
+Thank you for your purchase!
+</div>
+        
+        <div>
+            <button onclick="printReceipt()">Print Receipt</button>
+            <button onclick="printWithWindowPrint()">Print (window.print)</button>
+            <button onclick="printWithPostMessage()">Print (postMessage)</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to print receipt using our custom printReceipt function
+        function printReceipt() {
+            console.log('Print button clicked');
+            if (window.printReceipt) {
+                window.printReceipt('SAMPLE RECEIPT', document.getElementById('receipt').innerText);
+            } else {
+                alert('printReceipt function not available');
+                // Fall back to window.print
+                window.print();
+            }
+        }
+
+        // Function to print using window.print directly
+        function printWithWindowPrint() {
+            console.log('Print with window.print clicked');
+            window.print();
+        }
+
+        // Function to print using postMessage
+        function printWithPostMessage() {
+            console.log('Print with postMessage clicked');
+            window.postMessage({ action: 'print' }, '*');
+        }
+
+        // Log when the page is loaded
+        window.addEventListener('load', function() {
+            console.log('Print test page loaded');
+        });
+    </script>
+</body>
+</html>

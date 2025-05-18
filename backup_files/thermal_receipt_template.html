@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>58mm Thermal Receipt</title>
+    <link rel="stylesheet" href="thermal_print_58mm.css">
+    <style>
+        @page {
+            size: 5.8cm auto !important;  /* Width: 5.8cm, Height: auto */
+            margin: 0.1cm !important;      /* Minimal margins */
+        }
+        
+        @media print {
+            body {
+                width: 5.6cm !important;  /* 5.8cm - 0.2cm margins */
+                margin: 0;
+                padding: 0;
+                font-family: 'Noto Sans Thai', sans-serif;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        body {
+            width: 5.6cm;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans Thai', sans-serif;
+            font-size: 10pt;
+            background-color: white;
+        }
+        
+        .receipt {
+            width: 100%;
+        }
+        
+        .header {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14pt;
+        }
+        
+        .subheader {
+            text-align: center;
+            font-size: 12pt;
+            margin-bottom: 5px;
+        }
+        
+        .date-time {
+            font-size: 9pt;
+            margin-bottom: 5px;
+        }
+        
+        .content {
+            margin: 5px 0;
+        }
+        
+        .item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3px;
+        }
+        
+        .item-name {
+            flex: 2;
+        }
+        
+        .item-price {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-top: 5px;
+            font-size: 12pt;
+            border-top: 1px dashed #000;
+            padding-top: 3px;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 9pt;
+            margin-top: 10px;
+        }
+        
+        .print-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14pt;
+            font-family: 'Noto Sans Thai', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <div class="header">
+            ร้านกาแฟ
+        </div>
+        
+        <div class="subheader">
+            ใบเสร็จรับเงิน
+        </div>
+        
+        <div class="date-time">
+            <div class="item">
+                <span>วันที่:</span>
+                <span>13/05/2025</span>
+            </div>
+            <div class="item">
+                <span>เวลา:</span>
+                <span>14:20</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="item">
+                <span class="item-name">กาแฟเย็น x1</span>
+                <span class="item-price">฿45.00</span>
+            </div>
+            <div class="item">
+                <span class="item-name">ชาเย็น x2</span>
+                <span class="item-price">฿70.00</span>
+            </div>
+            <div class="item">
+                <span class="item-name">เค้กช็อคโกแลต x1</span>
+                <span class="item-price">฿60.00</span>
+            </div>
+        </div>
+        
+        <div class="total">
+            <span>รวม:</span>
+            <span>฿175.00</span>
+        </div>
+        
+        <div class="footer">
+            ขอบคุณที่ใช้บริการ
+            <br>
+            กรุณามาอีก
+        </div>
+    </div>
+    
+    <button class="print-button no-print" onclick="window.print()">พิมพ์ใบเสร็จ</button>
+    
+    <script>
+        // Auto-print after 1 second
+        setTimeout(function() {
+            window.print();
+        }, 1000);
+    </script>
+</body>
+</html>

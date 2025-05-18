@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Firefox Thermal Printer Setup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .steps {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .step {
+            margin-bottom: 15px;
+        }
+        .print-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+        @media print {
+            @page {
+                size: 58mm 50mm;
+                margin: 0;
+            }
+            body {
+                width: 58mm;
+                margin: 0;
+                padding: 0;
+            }
+            .no-print {
+                display: none;
+            }
+            .receipt {
+                display: block;
+            }
+        }
+        .receipt {
+            display: none;
+            width: 58mm;
+            font-family: monospace;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print">
+        <h1>Firefox Thermal Printer Setup</h1>
+        
+        <div class="steps">
+            <h2>Follow these steps to configure Firefox for your 58mm thermal printer:</h2>
+            
+            <div class="step">
+                <h3>Step 1: Open Print Dialog</h3>
+                <p>Click the button below to open the print dialog:</p>
+                <button class="print-button" onclick="window.print()">Open Print Dialog</button>
+            </div>
+            
+            <div class="step">
+                <h3>Step 2: Configure Print Settings</h3>
+                <p>In the print dialog that appears:</p>
+                <ol>
+                    <li>Select <strong>ThermalPrinter</strong> as your printer</li>
+                    <li>Click <strong>More settings</strong> to expand options</li>
+                    <li>Set <strong>Paper size</strong> to <strong>Custom</strong></li>
+                    <li>Enter <strong>58</strong> for Width and <strong>50</strong> for Height</li>
+                    <li>Select <strong>Millimeters</strong> as the unit</li>
+                    <li>Set <strong>Margins</strong> to <strong>None</strong></li>
+                    <li>Set <strong>Scale</strong> to <strong>100%</strong> (not "Fit to page")</li>
+                    <li>Uncheck <strong>Print headers and footers</strong></li>
+                    <li>Uncheck <strong>Print backgrounds</strong> (optional)</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h3>Step 3: Save Settings</h3>
+                <p>Important: Click <strong>Save</strong> to save these settings for future use.</p>
+                <p>Name the preset something like "58mm Thermal Printer"</p>
+            </div>
+            
+            <div class="step">
+                <h3>Step 4: Test Print</h3>
+                <p>After saving your settings, click <strong>Print</strong> to test if your settings work correctly.</p>
+                <p>You should get a small receipt with the text "ทดสอบการพิมพ์" printed on your thermal printer.</p>
+            </div>
+        </div>
+        
+        <h2>Troubleshooting</h2>
+        <ul>
+            <li>If paper still feeds too much, try decreasing the height value (e.g., to 40mm)</li>
+            <li>If text is cut off, try increasing the width slightly</li>
+            <li>If Firefox doesn't remember your settings, you may need to save them as a preset each time</li>
+        </ul>
+    </div>
+    
+    <div class="receipt">
+        <h2>ทดสอบการพิมพ์</h2>
+        <p>ขนาดกระดาษ: 58mm x 50mm</p>
+        <p>----------------------</p>
+        <p>การทดสอบสำเร็จ!</p>
+    </div>
+</body>
+</html>

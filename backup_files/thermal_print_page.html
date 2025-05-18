@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Thermal Printer Test</title>
+    <style>
+        @page {
+            size: 58mm 50mm;
+            margin: 0;
+        }
+        body {
+            width: 58mm;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 10pt;
+        }
+        .receipt {
+            width: 100%;
+        }
+        .header {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 5px;
+            padding-top: 5px;
+        }
+        .content {
+            margin: 5px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 9pt;
+            border-top: 1px dotted #000;
+            padding-top: 3px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <div class="header">
+            ทดสอบเครื่องพิมพ์
+        </div>
+        <div class="content">
+            <div class="item">
+                <span>รายการ:</span>
+                <span>สินค้า</span>
+            </div>
+            <div class="item">
+                <span>ราคา:</span>
+                <span>฿100.00</span>
+            </div>
+            <div class="item">
+                <span>จำนวน:</span>
+                <span>1</span>
+            </div>
+            <div class="item">
+                <span>รวม:</span>
+                <span>฿100.00</span>
+            </div>
+        </div>
+        <div class="footer">
+            ขอบคุณที่ใช้บริการ
+        </div>
+    </div>
+    <script>
+        // Auto-print when page loads
+        window.onload = function() {
+            // Short delay to ensure page is fully loaded
+            setTimeout(function() {
+                window.print();
+            }, 500);
+        };
+    </script>
+</body>
+</html>

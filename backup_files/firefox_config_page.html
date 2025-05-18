@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>58mm Printer Configuration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            line-height: 1.5;
+        }
+        .config-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .step {
+            margin-bottom: 15px;
+        }
+        .important {
+            background-color: #fffacd;
+            padding: 10px;
+            border-left: 4px solid #ffd700;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                width: 58mm;
+                margin: 0;
+                padding: 0;
+            }
+            .print-only {
+                display: block;
+                text-align: center;
+                font-family: monospace;
+            }
+        }
+        .print-only {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print">
+        <h1>58mm Thermal Printer Configuration</h1>
+        
+        <div class="config-section">
+            <h2>Firefox Print Settings</h2>
+            
+            <div class="step">
+                <h3>Step 1: Open Print Dialog</h3>
+                <p>Click this button to open Firefox's print dialog:</p>
+                <button class="button" onclick="window.print()">Open Print Dialog</button>
+            </div>
+            
+            <div class="step">
+                <h3>Step 2: Configure Print Settings</h3>
+                <ol>
+                    <li>Select <strong>ThermalPrinter</strong> from the printer list</li>
+                    <li>Click <strong>More settings</strong> to expand options</li>
+                    <li>Under <strong>Paper size</strong>, select <strong>Custom</strong></li>
+                    <li>Enter <strong>58</strong> for Width and <strong>50</strong> for Height</li>
+                    <li>Make sure <strong>Millimeters (mm)</strong> is selected</li>
+                    <li>Set <strong>Margins</strong> to <strong>None</strong></li>
+                    <li>Set <strong>Scale</strong> to <strong>100%</strong></li>
+                    <li>Uncheck <strong>Print headers and footers</strong></li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h3>Step 3: Save Your Settings</h3>
+                <p>Click the <strong>Save</strong> button to create a preset named "58mm Thermal Printer"</p>
+                <p class="important">Important: This will save your settings for future use!</p>
+            </div>
+            
+            <div class="step">
+                <h3>Step 4: Print Test Page</h3>
+                <p>Click <strong>Print</strong> to test your settings.</p>
+                <p>You should get a small receipt with Thai text.</p>
+            </div>
+        </div>
+        
+        <div class="config-section">
+            <h2>Troubleshooting</h2>
+            <ul>
+                <li>If paper feeds too much, try reducing the height (e.g., 40mm)</li>
+                <li>If text is cut off, try increasing the width slightly</li>
+                <li>If Firefox doesn't remember settings, save them as a preset each time</li>
+                <li>If printing fails, check that the printer is properly connected and has paper</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="print-only">
+        <h2>ทดสอบการพิมพ์</h2>
+        <p>-----------------</p>
+        <p>ขนาด: 58mm x 50mm</p>
+        <p>ทดสอบภาษาไทย</p>
+        <p>-----------------</p>
+        <p>การทดสอบสำเร็จ!</p>
+    </div>
+</body>
+</html>

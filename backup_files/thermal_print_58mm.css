@@ -1,0 +1,22 @@
+/* 
+ * Thermal Print 58mm CSS
+ * Custom CSS for printing to 58mm thermal printer
+ */
+
+@page {
+    size: 5.8cm auto !important;
+    margin: 0.1cm !important;
+}
+
+@media print {
+    html, body {
+        width: 56mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: 'Noto Sans Thai', sans-serif !important;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+}
